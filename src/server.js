@@ -13,7 +13,7 @@ server.use((req, res, next) => {
     res.header('Content-Type', 'application/json; charset=utf-8');
 
     // Permite el acceso desde el dominio específico
-    res.header('Access-Control-Allow-Origin', 'https://zeoxemz.github.io/pokedex/home');
+    res.header('Access-Control-Allow-Origin','https://zeoxemz.github.io, https://zeoxemz.github.io/podex/home');
 
     // Permite el acceso de credenciales en las solicitudes
     res.header('Access-Control-Allow-Credentials', 'true');
