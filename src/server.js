@@ -8,16 +8,18 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan("dev"));
 
+server.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      'interest-cohort': ['()'],
+    },
+  },
+}));
+
 server.use((req, res, next) => {
-
     res.header('Content-Type', 'application/json; charset=utf-8');
-
-    // Permite el acceso desde el dominio específico
     res.header('Access-Control-Allow-Origin','*');
-
-    // Permite el acceso de credenciales en las solicitudes
     res.header('Access-Control-Allow-Credentials', 'true');
-
     next();
 });
 
