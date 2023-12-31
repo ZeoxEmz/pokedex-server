@@ -20,6 +20,9 @@ server.use((req, res, next) => {
     res.header('Content-Type', 'application/json; charset=utf-8');
     res.header('Access-Control-Allow-Origin','*');
     res.header('Access-Control-Allow-Credentials', 'true');
+    if (req.path.endsWith('.svg')) {
+      res.set('Content-Type', 'image/svg+xml; charset=utf-8');
+  }
     next();
 });
 
